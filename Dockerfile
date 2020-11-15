@@ -38,9 +38,9 @@ USER airflow
 
 #RUN apt-get -y install gcc python3-dev 
 
-RUN pip config set global.index-url https://artifactory.gmfinancial.com/artifactory/api/pypi/remote-pip/simple
+#RUN pip config set global.index-url https://artifactory.gmfinancial.com/artifactory/api/pypi/remote-pip/simple
 
-RUN pip config set global.trusted-host artifactory.gmfinancial.com
+#RUN pip config set global.trusted-host artifactory.gmfinancial.com
 
 RUN pip install --user --upgrade pip
 RUN pip install --user -U setuptools
