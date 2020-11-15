@@ -2,14 +2,14 @@ FROM apache/airflow:1.10.12-python3.6
 
 USER root
 
-COPY kubectl-hpecp /tmp
-COPY kubectl /tmp
+#COPY kubectl-hpecp /tmp
+#COPY kubectl /tmp
 
-RUN cd /tmp && \
-    chmod +rx ./kubectl && \
-    chmod +rx ./kubectl-hpecp && \
-    mv ./kubectl /usr/bin/kubectl && \
-    mv ./kubectl-hpecp /usr/bin/kubectl-hpecp
+#RUN cd /tmp && \
+#    chmod +rx ./kubectl && \
+#    chmod +rx ./kubectl-hpecp && \
+#    mv ./kubectl /usr/bin/kubectl && \
+#    mv ./kubectl-hpecp /usr/bin/kubectl-hpecp
 	
 # Copy certs
 #COPY Certs\* /usr/local/share/ca-certificates/
