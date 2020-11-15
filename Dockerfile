@@ -44,6 +44,6 @@ RUN pip install --user --upgrade pip
 RUN pip install --user -U setuptools
 RUN pip install --user apache-airflow-backport-providers-cncf-kubernetes
 RUN pip install --user flask_bcrypt
-#RUN pip install --user ldap3
+RUN pip install --user ldap3
 #RUN pip install python-ldap
-RUN pip install pyldap
+RUN pip install --user pyldap
