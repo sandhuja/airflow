@@ -28,7 +28,7 @@ USER root
 # Install dependencies
 RUN apt-get update
 #RUN apt-get install -y python-dev libldap2-dev libssl-dev
-
+RUN apt-get -y install gcc python3-dev
 RUN apt-get install -y libsasl2-dev python-dev libldap2-dev libssl-dev
 	
 USER airflow
