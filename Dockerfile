@@ -29,9 +29,7 @@ USER root
 RUN apt-get update
 #RUN apt-get install -y python-dev libldap2-dev libssl-dev
 
-RUN apt-get install -y build-essential python3-dev python2.7-dev \
-    libldap2-dev libsasl2-dev slapd ldap-utils tox \
-    lcov valgrind
+RUN apt-get install -y libsasl2-dev python-dev libldap2-dev libssl-dev
 	
 USER airflow
 
@@ -47,4 +45,5 @@ RUN pip install --user -U setuptools
 RUN pip install --user apache-airflow-backport-providers-cncf-kubernetes
 RUN pip install --user flask_bcrypt
 #RUN pip install --user ldap3
-RUN pip install python-ldap
+#RUN pip install python-ldap
+RUN pip install pyldap
