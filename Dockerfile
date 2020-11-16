@@ -11,34 +11,13 @@ RUN cd /tmp && \
     mv ./kubectl /usr/bin/kubectl && \
     mv ./kubectl-hpecp /usr/bin/kubectl-hpecp
 	
-# Copy certs
-#COPY Certs\* /usr/local/share/ca-certificates/
-#RUN chmod 755 /usr/local/share/ca-certificates/ca-bundle.crt
-
-# Update certs
-#RUN update-ca-certificates
-
-#RUN echo export PIP_CERT=/etc/ssl/certs/ca-certificates.crt >> ~/.bashrc
-#RUN export PIP_CERT=/etc/ssl/certs/ca-certificates.crt
-#RUN export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-#RUN export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
-#RUN export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-
 
 # Install dependencies
 RUN apt-get update
-#RUN apt-get install -y python-dev libldap2-dev libssl-dev
 RUN apt-get -y install gcc python3-dev
 RUN apt-get install -y libsasl2-dev python-dev libldap2-dev libssl-dev
 	
 USER airflow
-
-
-#RUN apt-get -y install gcc python3-dev 
-
-#RUN pip config set global.index-url https://artifactory.gmfinancial.com/artifactory/api/pypi/remote-pip/simple
-
-#RUN pip config set global.trusted-host artifactory.gmfinancial.com
 
 RUN pip install --user --upgrade pip
 RUN pip install --user -U setuptools
